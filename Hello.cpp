@@ -1,7 +1,10 @@
 #include<iostream>
 using namespace std;
+
 int main()
 {
-	cout<<"Hello,world!"<<endl;
+        char name[20];
+        cin.get(name,20);
+	cout<<"Hello,"<<name<<"."<<endl;
 	return 0;
  } 
