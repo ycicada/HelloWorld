@@ -3,7 +3,8 @@
  //d=|x1-x2|+|y1-y2|
  #include <iostream>
  using namespace std;
- 
+
+//½¨Á¢º¯Êý 
  double abs(double x)
 {
     return x>0?x:-x;
