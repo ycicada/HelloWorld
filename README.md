@@ -1,2 +1,3 @@
-# HelloWorld
-C++
+//# HelloWorld
+//C++
+//信息学奥赛
