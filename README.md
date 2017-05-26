@@ -1,4 +1,6 @@
-﻿//# HelloWorld
-//C++
-//信息学奥赛
-测试git
+﻿//git clone git@github.com:hirocastest/Hello-world.git
+//git status
+//git add ...
+//git commit -m ...
+//or git commit -am ...
+//git log
