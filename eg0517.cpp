@@ -1,5 +1,6 @@
 //×Ö·û´®µÄÀý×Ó 
 #include<iostream>
+#include<cstdio> 
 #include<cstring>
 
 using namespace std;
