@@ -1,6 +1,7 @@
 //交换a,b的值（不用函数实现）
 //输入a,b的值，输入b,a
 //输入3 4；输出4 3 
+
 #include<iostream>
 #include<cstdlib>
 using namespace std;
