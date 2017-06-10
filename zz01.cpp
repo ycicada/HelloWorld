@@ -9,6 +9,7 @@ int main()
 	int **pp;
 	p=&a;
 	pp=&p;
-	cout<<"a:"<<a<<" p:"<<p<<" *p:"<<*p<<" pp:"<<pp<<" *pp:"<<*pp<<" **pp:"<<**pp;
+	cout<<"a:"<<a<<" p:"<<p<<" *p:"<<*p<<" pp:"<<pp<<" *pp:"<<*pp<<" **pp:"<<**pp<<endl;
+	cout<<*(p+1);//Ô½½çÊä³ö 
 	return 0;
 }
