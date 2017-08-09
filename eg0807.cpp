@@ -20,31 +20,64 @@ using namespace std;
 
 73 12 56 100 34 23 56 78 55 
 
-*/
+
+const int LP=100001;
+int n,m,k;
+int x[LP],y[LP],d[LP],c[LP],*a[LP];
+
 int main()
 {
-	int n,m,k;
-	int x,y,data;
 	cin>>n>>m>>k;
-	int **a=new int *[m+1];
-	//int *a[m+1];
 	for(int i=1;i<=k;i++)
 	{
-		cin>>x>>y>>data;
-		a[y]=new int[1];
-		*a[y]=data;
+		cin>>x[i]>>y[i]>>d[i];
+		c[y[i]]++;
+	}
+	for(int i=1;i<=m;i++)
+		a[i] = new int[c[i]];
+		
+	for(int i=1;i<=k;i++)
+	{
+		*a[y[i]] = d[i];
+		a[y[i]]++;
 	 } 
-	int *p;
 	for(int i=1;i<=m;i++)
 	{
-       p=a[i];
-		for(int j=0;j<sizeof(a[i]);j++)
-			cout<<p[j]<<" ";
-			
+		a[i]-=c[i];
+		for(int j=1;j<=c[i];j++,a[i]++)
+			cout<<*a[i]<<" ";
 	}	
 		
 	
 	//cout<<fixed<<setprecision(2);
+	return 0;
+}
+*/
+int main()
+{
+	int n,m,k;
+	cin>>n>>m>>k;
+    int LP=k+1;
+	int x[LP],y[LP],d[LP],c[m+1],*a[m+1];
+	for(int i=1;i<=k;i++)
+	{
+		cin>>x[i]>>y[i]>>d[i];
+		c[y[i]]++;
+	}
+	for(int i=1;i<=m;i++)
+		a[i] = new int[c[i]];
+		
+	for(int i=1;i<=k;i++)
+	{
+		*a[y[i]] = d[i];
+		a[y[i]]++;
+	 } 
+	for(int i=1;i<=m;i++)
+	{
+		a[i]-=c[i];
+		for(int j=1;j<=c[i];j++,a[i]++)
+			cout<<*a[i]<<" ";
+	}	
 	return 0;
 }
 
