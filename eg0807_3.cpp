@@ -7,7 +7,8 @@
 //#include <vector>
 using namespace std;
 
-/* 输入n,m,k，即最大n行，m列，共k个数，按行优先输入，按列优先输出
+/* 
+输入n,m,k，即最大n行，m列，共k个数，按行优先输入，按列优先输出
 4 6 10
 1 2 12
 1 4 23
