@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdio> //scanf,printf
+#include <cstring>
 //#include <iomanip>
 //#include <cmath>
 //#include <string>
@@ -7,7 +8,7 @@
 using namespace std;
 
 /* 输入n,m,k，即最大n行，m列，共k个数，按行优先输入，按列优先输出
-4 5 9
+4 6 10
 1 2 12
 1 4 23
 2 2 56
@@ -15,10 +16,11 @@ using namespace std;
 3 2 100
 3 4 56
 4 1 73
+4 2 65
 4 3 34
 4 5 55
 
-73 12 56 100 34 23 56 78 55 
+73 12 56 100 65 34 23 56 78 55 
 
 
 const int LP=100001;
@@ -58,10 +60,11 @@ int main()
 	int n,m,k;
 	cin>>n>>m>>k;
     int LP=k+1;
-	int x[LP],y[LP],d[LP],c[m+1],*a[m+1];
+	int x,y[LP],d[LP],c[m+1]={0},*a[m+1];
+	//memset(c,0,sizeof(c));
 	for(int i=1;i<=k;i++)
 	{
-		cin>>x[i]>>y[i]>>d[i];
+		cin>>x>>y[i]>>d[i];
 		c[y[i]]++;
 	}
 	for(int i=1;i<=m;i++)
@@ -72,12 +75,14 @@ int main()
 		*a[y[i]] = d[i];
 		a[y[i]]++;
 	 } 
+	
 	for(int i=1;i<=m;i++)
 	{
 		a[i]-=c[i];
 		for(int j=1;j<=c[i];j++,a[i]++)
 			cout<<*a[i]<<" ";
 	}	
+	
 	return 0;
 }
 

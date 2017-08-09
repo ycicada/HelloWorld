@@ -5,16 +5,17 @@
 //#include <vector>       // std::vector
 using namespace std;
 
-//排队打水问题，n人分r队打水，最少打水时间
-//4 2
-//2 6 4 5
+/*排队打水问题，n人分r队打水，最少打水时间
+4 2
+2 6 4 5
 //23 
+*/
 int main()
 {
 	int j=0,minx=0,n,r;
 	cin>>n>>r;
-	int a[n],s[r] ;
-	memset(s,0,sizeof(s));
+	int a[n],s[r]={0} ;
+//	memset(s,0,sizeof(s));
 //    for(int i=0;i<r;i++)
 //     s[i]=0;
 	for(int i=0;i<n;i++)
