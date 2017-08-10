@@ -26,11 +26,8 @@ int main()
 	int n,m,k,temp;
 	int x,y,data;
 	cin>>n>>m>>k;
-	int a[m+1][k+1];
-	for(int i=0;i<=m;i++)
-		for(int j=0;j<=k;j++)
-		a[i][j]=0;
-	//int *a[m+1];
+	int a[m+1][k+1]={0};
+
 	for(int i=1;i<=k;i++)
 	{
 		cin>>x>>y>>data;
@@ -42,11 +39,7 @@ int main()
 	{
 		for(int j=1;j<=(a[i])[0];j++)
 			cout<<a[i][j]<<" ";
-			
 	}	
-		
-	
-	//cout<<fixed<<setprecision(2);
 	return 0;
 }
 
