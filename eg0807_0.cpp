@@ -21,7 +21,7 @@ using namespace std;
 
 const int LP=100001;
 int n,m,k;
-int x[LP],y[LP],d[LP],c[LP],*a[LP];
+int x[LP],y[LP],d[LP],c[LP]={0},*a[LP];
 
 int main()
 {
@@ -45,6 +45,8 @@ int main()
 		for(int j=1;j<=c[i];j++,a[i]++)
 			cout<<*a[i]<<" ";
 	}	
-
+//	for(int i=1;i<=m;i++)
+//		if (c[i]>0)
+//			delete a[i]; 
 	return 0;
 }
