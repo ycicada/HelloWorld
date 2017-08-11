@@ -4,11 +4,17 @@
 #include <cstring>
 using namespace std;
 
-//*高精度除法；来自于信息学奥赛一本通C++P185ge0104*//
+/*高精度除法-2；来自于信息学奥赛一本通C++P185ge0104
+in:123412341234123412341234
+4321
+
+out:
+2856106022543934...2420
+*/
 int main()
 {
 	char a1[100];
-	int a[100],b,c[100],lena,lenb,lenc,i,x;
+	int a[100],b,c[100],lena,lenb,lenc,i,x,m,l;
 	memset(a,0,sizeof(a));
 	memset(c,0,sizeof(c));
 
@@ -16,35 +22,33 @@ int main()
     cin>>b;
 
 	lena = strlen(a1);
-	//for(int i=0;i<=lena-1;i++)  
-	//   a[i+1] = a1[i]-'0';
-	int l =(lena%4==0)?lena/4:lena/4 +1;
+	m=lena%4;
+	l = (m==0)?(lena/4):((lena/4)+1);
+
 	for(i=0;i<=l-1;i++){
 		for(int j=3;j>=0;j--)
 		{
-			if(i==0 && (l-i-1)*4+(j+1)>lena)
+			if((i*4-j+m-1)<0)
 			   continue;
-			c[i+1] +=(a1[(i+1)*4-(j+1)]-'0') *pow(10,j);
+			a[i+1] += (a1[(i*4-j+m-1)]-'0') * pow(10,j);
 		}
-	cout<<c[i]<<" ";	
+	 // cout<<a[i+1]<<" ";	
 	}
 
-	//按位相除 
-	lenc = 1,x = 0;
-	/*
-	for(i=1;i<=lena;i++) 
+	//按段相除 
+	x = 0;
+	for(i=1;i<=l;i++)
 	{
-		c[i]=(x*10+a[i])/b;
-		x=(x*10+a[i])%b;
+		c[i] = (x*10000 +a[i]) / b;
+		 x   = (x*10000 +a[i]) % b;
 	}
 	
-	
-	
-	while(c[lenc]==0 && lenc<lena) 
+	lenc=1;
+	while(c[lenc]==0 && lenc<l) 
 		lenc++;
-	for(i=lenc;i<=lena;i++) cout<<c[i];
+		
+	for(int i=lenc;i<=l;i++) cout<<c[i];
 	cout<<"..."<<x<<endl; 
-	*/
 	return 0;
 }
 
