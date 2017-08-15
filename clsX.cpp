@@ -8,6 +8,7 @@ class X{
 }; 
 
 
+//
 void fun(X &x){
 	x.a=X::Ok;//x.a=x.OK
 }
