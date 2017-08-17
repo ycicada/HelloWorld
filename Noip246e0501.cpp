@@ -1,7 +1,12 @@
 #include <iostream>
+#include <fstream> 
 #include <cmath> 
 #include <cstdio>
 using namespace std;
+
+//ifstream fin("a.in");
+ofstream fout("a.out");
+
 bool b[21]={0};
 int a[21]={0},total=0;
 
@@ -29,7 +34,7 @@ int search(int t)
 			   else search(t+1);
 			b[i]=0;
 		}
-
+     if (total>=1000) break;
 	 } 
 	
 }
@@ -37,13 +42,16 @@ int search(int t)
 void print()
 {
 	total++;
-	//cout<<total<<":"; 
-	printf("%d:",total);
+	cout<<total<<":"; 
+	//printf("%d:",total);
+	//fout<<total<<":";
 	for(int j=1;j<=20;j++)
-	 // cout<<a[j]<<" ";
-	 	printf("%d ",a[j]);
-	printf("\n");
-	 //cout<<endl;
+	  cout<<a[j]<<" ";
+	 //	printf("%d ",a[j]);
+	//fout<<a[j]<<" ";
+	//printf("\n");
+	//fout<<endl;
+	 cout<<endl;
 	 
 }
 
