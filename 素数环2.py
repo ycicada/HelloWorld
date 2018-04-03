@@ -29,17 +29,16 @@ def search(t,n):
             b[i] = False      #回溯
             
 if __name__=="__main__":
-    #取得2-40之间的素数集
-
     n = int(input())
-    #生成素数集
+
+    #生成2-2n之间的素数集
     P=set([p for p in range(2,2*n) if 0 not in[p%d for d in range(2,int(p**0.5)+1)]])
     a = [0,1]+[0]*(n-1) #第1个数固定为1，防止重复方案，a[0]不用
     b = [False,True]+[False]*(n-1) #标记第1个数，b[0]不用
     total=0;
-    
+    #从第2个数开始搜索，并打印各种方案
     search(2,n)
-    
+    #输出方案总数
     print(total)
 
     
