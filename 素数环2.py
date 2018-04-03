@@ -22,9 +22,8 @@ def search(t,n):
         if ((a[t-1]+i) in P) and (not b[i]):
             a[t] = i
             b[i] = True
-            if t==n:
-                if (a[1]+a[n]) in P:
-                    prt()
+            if t==n and (a[1]+a[n]) in P:
+                prt()
             else:
                 search(t+1,n) #找下一个数
             b[i] = False      #回溯
